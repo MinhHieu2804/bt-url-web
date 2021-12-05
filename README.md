@@ -1,2 +1,7 @@
-chạy node server.js
+run node server.js
+
+/ -> list
+/student ->get 
+/update_info ->update
+
 
