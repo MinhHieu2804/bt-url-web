@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta charset="utf-8">
+</head>
+<body>
+	<ul id="myList"></li>
+	<script>
+		fetch("/api/students")
+		.then(response => response.json())
+  		.then(data => {
+			let list = document.getElementById("myList");
+			data.data.forEach((item) => {
+				let li = document.createElement("li");
+				li.innerText = `Name: ${item.name} - MSV: ${item.msv}`;
+				list.appendChild(li);
+			});
+		  })
+	</script>
+</body>
+</html>

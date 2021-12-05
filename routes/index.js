@@ -1,0 +1,1 @@
+module.exports.studentRouter = require('./student.route');
