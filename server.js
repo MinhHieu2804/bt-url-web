@@ -7,21 +7,13 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, 'views'));
-app.use(express.urlencoded({extended : true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 let data = [
     {
-        name: 'Student 1',
-        msv: '123',
-    },
-    {
-        name: 'Student 2',
-        msv: '456',
-    },
-    {
-        name: 'Student 3',
-        msv: '789',
+        name: 'Ta Minh Hieu',
+        msv: '19020070',
     },
 ];
 

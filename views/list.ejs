@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head>
+
+<head>
 	<meta charset="utf-8">
 </head>
+
 <body>
-	<ul id="myList"></li>
+	<div class="output"></div>
 	<script>
 		fetch("/api/students")
-		.then(response => response.json())
-  		.then(data => {
-			let list = document.getElementById("myList");
-			data.data.forEach((item) => {
-				let li = document.createElement("li");
-				li.innerText = `Name: ${item.name} - MSV: ${item.msv}`;
-				list.appendChild(li);
-			});
-		  })
+			.then(response => response.json())
+			.then(data => {
+				document.querySelector("div.output").innerHTML = JSON.stringify(data.data);
+			})
 	</script>
 </body>
+
 </html>

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <head>
+
+<head>
 	<meta charset="utf-8">
 </head>
+
 <body>
 	<div class="output"></div>
 	Mã sinh viên: <input type="text" class="masv"> <br>
@@ -10,18 +12,18 @@
 	<button class="submit">Cập nhật</button>
 
 	<script>
-		document.querySelector("button.submit").onclick = function() {
+		document.querySelector("button.submit").onclick = function () {
 			fetch("/api/students", {
 				method: "PUT",
-				headers: {"Content-Type": "application/json"},
-				body: '{"msv":"'+document.querySelector("input.masv").value+'","name":"'+ document.querySelector("input.hoten").value+'"}'
+				headers: { "Content-Type": "application/json" },
+				body: '{"msv":"' + document.querySelector("input.masv").value + '","name":"' + document.querySelector("input.hoten").value + '"}'
 			})
-			.then(response => response.json())
-            .then(data => {
-                const msg = (data.status === 200)? "Updated": "Error! Try again";
-                document.querySelector("div.output").innerHTML = msg;	
-		  })
+				.then(response => response.json())
+				.then(data => {
+					document.querySelector("div.output").innerHTML = JSON.stringify(data.data);
+				})
 		};
 	</script>
 </body>
+
 </html>
